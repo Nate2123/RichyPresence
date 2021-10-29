@@ -1,0 +1,15 @@
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\RichyPresence.exe.config
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\RichyPresence.exe
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\RichyPresence.pdb
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.csproj.AssemblyReference.cache
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.RichyPresence.resources
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.Properties.Resources.resources
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.csproj.GenerateResource.cache
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.csproj.CoreCompileInputs.cache
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.exe
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\obj\Debug\RichyPresence.pdb
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\DiscordRPC.dll
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\Newtonsoft.Json.dll
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\DiscordRPC.pdb
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\DiscordRPC.xml
+C:\Users\OS\source\repos\RichyPresence\RichyPresence\bin\Debug\Newtonsoft.Json.xml
