@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiscordRPC;
-using DiscordRPC.Logging;
+
 
 namespace RichyPresence
 {
@@ -24,10 +24,16 @@ namespace RichyPresence
      
         private void button2_Click(object sender, EventArgs e)
         {
-            initialized = true;
-            client = new DiscordRpcClient($"{textBox5.Text}");
-            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
-            client.Initialize();
+            if (initialized == true)
+            {
+                MessageBox.Show("Initializing twice will break the program.");
+            }
+            else
+            {
+                initialized = true;
+                client = new DiscordRpcClient($"{textBox5.Text}");
+                client.Initialize();
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,13 +42,16 @@ namespace RichyPresence
             {
                 MessageBox.Show("You need to initialize the app first!");
             }
-            if (textBox6.Text == "yes")
+            else
             {
                 client.SetPresence(new DiscordRPC.RichPresence()
                 {
                     Details = $"{textBox2.Text}",
                     State = $"{textBox1.Text}",
-                    Timestamps = Timestamps.Now,
+                    Buttons = new DiscordRPC.Button[]
+                    {
+                    new DiscordRPC.Button() { Label = $"{textBox6.Text}", Url = $"{textBox7.Text}" }
+                    },
                     Assets = new Assets()
                     {
                         LargeImageKey = $"{textBox3.Text}",
@@ -51,20 +60,7 @@ namespace RichyPresence
                     }
                 });
             }
-            if (textBox6.Text == "no")
-            {
-                client.SetPresence(new DiscordRPC.RichPresence()
-                {
-                    Details = $"{textBox2.Text}",
-                    State = $"{textBox1.Text}",
-                    Assets = new Assets()
-                    {
-                        LargeImageKey = $"{textBox3.Text}",
-                        LargeImageText = "Made by RichyPresence",
-                        SmallImageKey = $"{textBox4.Text}"
-                    }
-                });
-            }
+
 
         }
 
@@ -178,9 +174,26 @@ namespace RichyPresence
             }
         }
 
+        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (initialized == false)
+            {
+                MessageBox.Show("Why would you want to turn off a program that's already off");
+                
+            }
+            
+            else
+            {
+                initialized = false;
+                client.Dispose();
+            }
+        }
+
         private void textBox6_Enter(object sender, EventArgs e)
         {
-            if (textBox6.Text == "Display Time (yes or no)")
+            if (textBox6.Text == "Button Text")
             {
                 textBox6.Text = "";
 
@@ -193,9 +206,31 @@ namespace RichyPresence
         {
             if (textBox6.Text == "")
             {
-                textBox6.Text = "Display Time (yes or no)";
+                textBox6.Text = "Button Text";
 
                 textBox6.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void textBox7_Enter(object sender, EventArgs e)
+        {
+            if (textBox7.Text == "Button URL")
+            {
+                textBox7.Text = "";
+
+                textBox7.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void textBox7_Leave(object sender, EventArgs e)
+        {
+            if (textBox7.Text == "")
+            {
+                textBox7.Text = "Button URL";
+
+                textBox7.ForeColor = Color.Silver;
 
             }
         }
