@@ -20,13 +20,15 @@ namespace RichyPresence
         }
         public DiscordRpcClient client;
         bool initialized = false;
-    
+        bool time = false;
      
         private void button2_Click(object sender, EventArgs e)
         {
             if (initialized == true)
             {
-                MessageBox.Show("Initializing twice will break the program.");
+                client.Dispose();
+                client = new DiscordRpcClient($"{textBox5.Text}");
+                client.Initialize();
             }
             else
             {
@@ -42,23 +44,56 @@ namespace RichyPresence
             {
                 MessageBox.Show("You need to initialize the app first!");
             }
-            else
+            if (time == false)
             {
-                client.SetPresence(new DiscordRPC.RichPresence()
+                if (initialized == false)
                 {
-                    Details = $"{textBox2.Text}",
-                    State = $"{textBox1.Text}",
-                    Buttons = new DiscordRPC.Button[]
+                    return;
+                }
+                else
+                {
+                    client.SetPresence(new DiscordRPC.RichPresence()
                     {
-                    new DiscordRPC.Button() { Label = $"{textBox6.Text}", Url = $"{textBox7.Text}" }
-                    },
-                    Assets = new Assets()
+                        Details = $"{textBox2.Text}",
+                        State = $"{textBox1.Text}",
+                        Buttons = new DiscordRPC.Button[]
+                        {
+                        new DiscordRPC.Button() { Label = $"{textBox6.Text}", Url = $"{textBox7.Text}" }
+                        },
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = $"{textBox3.Text}",
+                            LargeImageText = "Made by RichyPresence",
+                            SmallImageKey = $"{textBox4.Text}"
+                        }
+                    });
+                }
+            }
+            if (time == true)
+            {
+                if (initialized == false)
+                {
+                    return;
+                }
+                else
+                {
+                    client.SetPresence(new DiscordRPC.RichPresence()
                     {
-                        LargeImageKey = $"{textBox3.Text}",
-                        LargeImageText = "Made by RichyPresence",
-                        SmallImageKey = $"{textBox4.Text}"
-                    }
-                });
+                        Details = $"{textBox2.Text}",
+                        State = $"{textBox1.Text}",
+                        Timestamps = Timestamps.Now,
+                        Buttons = new DiscordRPC.Button[]
+                        {
+                        new DiscordRPC.Button() { Label = $"{textBox6.Text}", Url = $"{textBox7.Text}" }
+                        },
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = $"{textBox3.Text}",
+                            LargeImageText = "Made by RichyPresence",
+                            SmallImageKey = $"{textBox4.Text}"
+                        }
+                    });
+                }
             }
 
 
@@ -234,5 +269,19 @@ namespace RichyPresence
 
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (time == true)
+            {
+                time = false;
+            }
+            else
+            {
+                time = true;
+            }
+        }
+
+        
     }
 }
