@@ -40,6 +40,7 @@ namespace RichyPresence
             this.button3 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -130,7 +131,7 @@ namespace RichyPresence
             // textBox6
             // 
             this.textBox6.ForeColor = System.Drawing.Color.Silver;
-            this.textBox6.Location = new System.Drawing.Point(12, 155);
+            this.textBox6.Location = new System.Drawing.Point(191, 51);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(160, 20);
             this.textBox6.TabIndex = 9;
@@ -141,7 +142,7 @@ namespace RichyPresence
             // textBox7
             // 
             this.textBox7.ForeColor = System.Drawing.Color.Silver;
-            this.textBox7.Location = new System.Drawing.Point(12, 181);
+            this.textBox7.Location = new System.Drawing.Point(191, 77);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(160, 20);
             this.textBox7.TabIndex = 10;
@@ -149,12 +150,24 @@ namespace RichyPresence
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
             this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(191, 106);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "Display Time";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // RichyPresence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(434, 235);
+            this.ClientSize = new System.Drawing.Size(439, 167);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button3);
@@ -187,6 +200,7 @@ namespace RichyPresence
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
