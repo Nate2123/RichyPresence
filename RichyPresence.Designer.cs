@@ -29,6 +29,7 @@ namespace RichyPresence
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RichyPresence));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,6 +42,12 @@ namespace RichyPresence
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richPresenceSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -161,6 +168,45 @@ namespace RichyPresence
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "RichyPresence has been minimized to the system tray.";
+            this.notifyIcon1.BalloonTipTitle = "Minimized";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "RichyPresence";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem,
+            this.richPresenceSettingsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(193, 70);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.closeToolStripMenuItem.Text = "Exit";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // richPresenceSettingsToolStripMenuItem
+            // 
+            this.richPresenceSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.turnOffToolStripMenuItem});
+            this.richPresenceSettingsToolStripMenuItem.Name = "richPresenceSettingsToolStripMenuItem";
+            this.richPresenceSettingsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.richPresenceSettingsToolStripMenuItem.Text = "Rich Presence Settings";
+            // 
+            // turnOffToolStripMenuItem
+            // 
+            this.turnOffToolStripMenuItem.Name = "turnOffToolStripMenuItem";
+            this.turnOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turnOffToolStripMenuItem.Text = "Turn Off";
+            this.turnOffToolStripMenuItem.Click += new System.EventHandler(this.turnOffToolStripMenuItem_Click);
+            // 
             // RichyPresence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +229,8 @@ namespace RichyPresence
             this.MaximizeBox = false;
             this.Name = "RichyPresence";
             this.Text = "RichyPresence";
+            this.Resize += new System.EventHandler(this.RichyPresence_Resize);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +249,11 @@ namespace RichyPresence
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem richPresenceSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnOffToolStripMenuItem;
     }
 }
 
