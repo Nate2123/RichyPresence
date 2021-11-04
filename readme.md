@@ -10,4 +10,8 @@ Go to the [releases](https://github.com/Nate2123/RichyPresence/releases) tab, do
  - Type in the App ID you want to change to, press initialize then press update again, that'll change it
 >"Is this safe?"
  - Yes, the source code is right in front of you. If you want to, you can build it from source.
+>"How do I run it in the background?"
 
+- Press the minimize icon, it'll run it in the background.
+>"How do I restore it?
+- Double click on the icon in the system tray.
