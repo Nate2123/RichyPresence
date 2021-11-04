@@ -282,6 +282,51 @@ namespace RichyPresence
             }
         }
 
+       
+
         
+
+        private void RichyPresence_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(1000);
+            }
+            else if (FormWindowState.Normal == this.WindowState)
+            { notifyIcon1.Visible = false; }
+            
+          
+        }
+
+        
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            notifyIcon1.Visible = false;
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void turnOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (initialized == false)
+            {
+                MessageBox.Show("Why would you want to turn off a program that's already off");
+
+            }
+
+            else
+            {
+                initialized = false;
+                client.Dispose();
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
