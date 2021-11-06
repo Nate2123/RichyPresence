@@ -1,6 +1,6 @@
 # RichyPresence
 
-RichyPresence is a project that is developed and mentained by me, PixelatedWarrior.
+RichyPresence is a project that is developed and mainntained by me, PixelatedWarrior.
 It pretty much has a horrible user interface, but atleast it works.
 
 ## Installation
